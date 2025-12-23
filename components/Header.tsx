@@ -8,44 +8,33 @@ export default function Header() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Sections for about page
-  const aboutSections = [
+  // Scroll sections for About page
+  const aboutScrollSections = [
     "blue-futures",
-    "ocean-heart",
+    "rethinking-oceans",
     "students-leaders",
     "sdg-ocean",
     "call-to-action"
   ];
 
-  // Sections for home page
-  const homeSections = [
-    "highlights",
-    "why-blue-futures",
-    "join-movement",
-    "call-action"
-  ];
-
-  const getSectionLabels = (sectionIds: string[]) => {
+  const getSectionLabel = (sectionId: string) => {
     const labels: Record<string, string> = {
       "blue-futures": "Blue Futures",
-      "ocean-heart": "Ocean Heart",
-      "students-leaders": "Students Leaders",
+      "rethinking-oceans": "Rethinking Our Oceans",
+      "students-leaders": "By students for students",
       "sdg-ocean": "SDG Ocean",
-      "call-to-action": "Call To Action",
-      "highlights": "Highlights",
-      "why-blue-futures": "Why Blue Futures",
-      "join-movement": "Join Movement",
-      "call-action": "Future is Now"
+      "call-to-action": "Call to Action"
     };
-    return labels;
+    return labels[sectionId] || sectionId;
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Check which section is in viewport
+      // Check which section is in viewport (for pages with scroll sections)
       const sections = document.querySelectorAll("section[id]");
       let currentSection = "";
 
@@ -72,78 +61,123 @@ export default function Header() {
     }
   };
 
-  // Determine which sections to show
-  let visibleSections: string[] = [];
-  const labels = getSectionLabels([...aboutSections, ...homeSections]);
-
-  if (pathname === "/about") {
-    visibleSections = aboutSections;
-  } else if (pathname === "/") {
-    visibleSections = homeSections;
-  }
-
-  // Check if current page has scrollable sections
-  const isScrollablePage = visibleSections.length > 0;
+  // Determine if current page has scroll sections
+  const isAboutPage = pathname === "/about";
+  const visibleSections = isAboutPage ? aboutScrollSections : [];
 
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur border-b border-gray-100 shadow-md" : "bg-white/60 backdrop-blur"
+        isScrolled ? "bg-white/95 backdrop-blur border-b border-gray-200 shadow-md" : "bg-white/80 backdrop-blur border-b border-gray-100"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
-          <span className="font-bold text-sm md:text-base hidden sm:inline">{site.name}</span>
-        </Link>
+      {/* Main navigation - top bar */}
+      <div className="border-b border-gray-200">
+        <div className="container flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+            <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
+            <span className="font-bold text-sm md:text-base">{site.name}</span>
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
-          {isScrollablePage ? (
-            // Scrollable page navigation
-            visibleSections.map((sectionId) => {
-              const label = labels[sectionId];
+          {/* Main tabs - hidden on mobile */}
+          <nav className="hidden lg:flex items-center gap-0">
+            {site.mainNav.map((item, index) => (
+              <div key={item.href}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`nav-link px-4 py-4 text-sm font-medium border-b-2 transition-all ${
+                      index === site.mainNav.length - 1
+                        ? "bg-brand text-white border-brand"
+                        : "text-gray-700 hover:text-brand border-b-2 border-transparent hover:border-brand-light"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`nav-link px-4 py-4 text-sm font-medium border-b-2 transition-all ${
+                      pathname === item.href
+                        ? "text-brand border-b-2 border-brand"
+                        : "text-gray-700 hover:text-brand border-b-2 border-transparent hover:border-brand-light"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
 
-              return (
-                <button
-                  key={sectionId}
-                  onClick={() => scrollToSection(sectionId)}
-                  className={`nav-link text-sm font-medium transition-all px-3 py-2 rounded-lg ${
-                    activeSection === sectionId
-                      ? "bg-brand text-white"
-                      : "text-gray-700 hover:text-brand hover:bg-brand-light/20"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })
-          ) : (
-            // Regular page navigation
-            site.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`nav-link text-sm font-medium transition-all px-3 py-2 rounded-lg ${
-                  pathname === item.href
-                    ? "bg-brand text-white"
-                    : "text-gray-700 hover:text-brand hover:bg-brand-light/20"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))
-          )}
-        </nav>
-
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button className="text-gray-700 hover:text-brand">
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden p-2 text-gray-700 hover:text-brand"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
       </div>
+
+      {/* Scroll sections tabs - only show on pages with scrollable content */}
+      {visibleSections.length > 0 && (
+        <div className="border-b border-gray-100 bg-gray-50">
+          <div className="container flex items-center gap-0 overflow-x-auto">
+            {visibleSections.map((sectionId) => {
+              const label = getSectionLabel(sectionId);
+              return (
+                <button
+                  key={sectionId}
+                  onClick={() => scrollToSection(sectionId)}
+                  className={`px-4 py-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${
+                    activeSection === sectionId
+                      ? "text-brand border-b-2 border-brand bg-white"
+                      : "text-gray-600 hover:text-brand border-b-2 border-transparent hover:border-brand-light/50"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <nav className="container flex flex-col">
+            {site.mainNav.map((item) => (
+              <div key={item.href}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand border-b border-gray-100"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand border-b border-gray-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
