@@ -26,51 +26,51 @@ export default function SearchPage() {
         className="w-full border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-brand text-gray-800"
       />
       <div className="mt-6 grid md:grid-cols-3 gap-6">
-        <div>
-          <h3 className="font-semibold mb-2 text-white">Speakers</h3>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <h3 className="font-semibold mb-3 text-white">Speakers</h3>
           <ul className="space-y-2">
             {results.speakers.length > 0 ? (
               results.speakers.map(s => (
                 <li key={s.slug}>
-                  <Link href={`/speakers/${s.slug}`} className="text-white hover:text-brand-light hover:underline transition">
+                  <Link href={`/speakers/${s.slug}`} className="text-white/90 hover:text-brand-light hover:underline transition text-sm">
                     {s.name}
                   </Link>
                 </li>
               ))
             ) : (
-              <li className="text-white/70 text-sm">No speakers found</li>
+              <li className="text-white/60 text-sm">No speakers found</li>
             )}
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold mb-2 text-white">Agenda</h3>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <h3 className="font-semibold mb-3 text-white">Agenda</h3>
           <ul className="space-y-2">
             {results.agenda.length > 0 ? (
-              results.agenda.map((a,i) => <li key={i} className="text-white text-sm">{a.time} — {a.title}</li>)
+              results.agenda.map((a,i) => <li key={i} className="text-white/90 text-sm">{a.time} — {a.title}</li>)
             ) : (
-              <li className="text-white/70 text-sm">No sessions found</li>
+              <li className="text-white/60 text-sm">No sessions found</li>
             )}
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold mb-2 text-white">News</h3>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <h3 className="font-semibold mb-3 text-white">News</h3>
           <ul className="space-y-2">
             {results.news.length > 0 ? (
               results.news.map((n,i) => (
                 <li key={i}>
                   {n.url?.startsWith("http") ? (
-                    <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-light hover:underline transition">
+                    <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-brand-light hover:underline transition text-sm">
                       {n.title}
                     </a>
                   ) : (
-                    <Link href={n.url || "#"} className="text-white hover:text-brand-light hover:underline transition">
+                    <div className="text-white/90 text-sm">
                       {n.title}
-                    </Link>
+                    </div>
                   )}
                 </li>
               ))
             ) : (
-              <li className="text-white/70 text-sm">No news found</li>
+              <li className="text-white/60 text-sm">No news found</li>
             )}
           </ul>
         </div>
