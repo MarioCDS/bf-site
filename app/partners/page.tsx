@@ -61,15 +61,25 @@ export default function PartnersPage() {
                         tier === "Host" || tier === "Main Sponsor" ? "p-8" : "p-6"
                       }`}
                     >
-                      {/* Logo Placeholder */}
-                      <div className={`bg-gray-100 rounded-xl flex items-center justify-center mb-4 ${
-                        tier === "Host" || tier === "Main Sponsor" ? "h-24" : "h-16"
+                      {/* Logo */}
+                      <div className={`bg-gray-50 rounded-xl flex items-center justify-center mb-4 p-4 ${
+                        tier === "Host" || tier === "Main Sponsor" ? "h-28" : "h-20"
                       }`}>
-                        <span className={`font-semibold text-gray-400 text-center px-4 ${
-                          tier === "Host" || tier === "Main Sponsor" ? "text-lg" : "text-sm"
-                        }`}>
-                          {partner.name}
-                        </span>
+                        {partner.logo ? (
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            className={`max-h-full max-w-full object-contain ${
+                              tier === "Host" || tier === "Main Sponsor" ? "h-16" : "h-12"
+                            }`}
+                          />
+                        ) : (
+                          <span className={`font-semibold text-gray-400 text-center px-4 ${
+                            tier === "Host" || tier === "Main Sponsor" ? "text-lg" : "text-sm"
+                          }`}>
+                            {partner.name}
+                          </span>
+                        )}
                       </div>
 
                       {/* Partner Name */}

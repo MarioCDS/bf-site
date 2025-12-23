@@ -27,46 +27,53 @@ export default function NewsPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="grid gap-6">
-              {news.map((n, i) => (
-                <article key={i} className="card hover:shadow-lg transition-shadow">
-                  <div className="flex flex-col md:flex-row md:items-center gap-4">
-                    <div className="flex-1">
-                      <div className="text-sm text-brand font-medium mb-1">
-                        {new Date(n.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric"
-                        })}
+              {news.map((n, i) => {
+                const isExternal = n.url?.startsWith('http');
+                const CardWrapper = n.url ? (isExternal ? 'a' : Link) : 'div';
+                const linkProps = n.url ? (isExternal ? {
+                  href: n.url,
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                } : { href: n.url }) : {};
+
+                return (
+                  <CardWrapper
+                    key={i}
+                    {...linkProps as any}
+                    className={`card hover:shadow-lg transition-all block ${n.url ? 'cursor-pointer hover:border-brand/30' : ''}`}
+                  >
+                    <article>
+                      <div className="flex flex-col md:flex-row md:items-start gap-4">
+                        <div className="flex-1">
+                          <div className="text-sm text-brand font-medium mb-2">
+                            {new Date(n.date).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric"
+                            })}
+                          </div>
+                          <h3 className="text-xl font-semibold mb-2 group-hover:text-brand transition-colors flex items-center gap-2">
+                            {n.title}
+                            {n.url && (
+                              <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                            )}
+                          </h3>
+                          {n.description && (
+                            <p className="text-gray-600">{n.description}</p>
+                          )}
+                        </div>
+                        {n.url && (
+                          <span className="btn btn-primary text-sm shrink-0">
+                            Read More
+                          </span>
+                        )}
                       </div>
-                      {n.url ? (
-                        <a
-                          href={n.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xl font-semibold hover:text-brand transition-colors inline-flex items-center gap-2"
-                        >
-                          {n.title}
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      ) : (
-                        <h3 className="text-xl font-semibold">{n.title}</h3>
-                      )}
-                    </div>
-                    {n.url && (
-                      <a
-                        href={n.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary text-sm"
-                      >
-                        Read More
-                      </a>
-                    )}
-                  </div>
-                </article>
-              ))}
+                    </article>
+                  </CardWrapper>
+                );
+              })}
             </div>
 
             {news.length === 0 && (
