@@ -10,7 +10,13 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`
   },
   description: site.description,
-  metadataBase: new URL("https://blue-futures.vercel.app")
+  metadataBase: new URL("https://blue-futures.vercel.app"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }:{ children: React.ReactNode }) {
