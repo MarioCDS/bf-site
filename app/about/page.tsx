@@ -25,10 +25,7 @@ export default function AboutPage() {
       {/* Ocean Facts */}
       <section className="py-16 bg-gradient-to-br from-brand-light/10 to-white">
         <div className="container">
-          <h2 className="h2 text-center mb-4">Shocking Ocean Facts</h2>
-          <p className="text-center muted max-w-2xl mx-auto mb-12">
-            The numbers that remind us why we must act now
-          </p>
+          <h2 className="h2 text-center mb-4">The numbers that remind us why we must act now</h2>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center p-6 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-4xl font-bold text-brand mb-2">71%</div>
@@ -184,28 +181,37 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-blue-100">
-        <div className="container">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+              src="https://plus.unsplash.com/premium_photo-1663039947303-0fad26f737b8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Ocean"
+              className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-dark/85"></div>
+        </div>
+        <div className="relative z-10 container text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="h2 mb-6">Join the Movement</h2>
-            <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+            <p className="text-white/90 leading-relaxed mb-8 text-lg">
               This conference is an invitation: to reflect, to learn, and to lead. To connect across
               borders and disciplines, and to dare to imagine a world where our oceans thrive and so do we.
-              <strong className="text-brand"> Blue Futures is not just an event—it is a call to action</strong> for the
+              <strong className="text-brand-light"> Blue Futures is not just an event—it is a call to action</strong> for the
               changemakers of today, shaping the oceans and the future we all depend on.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
               <a
-                href={site.eventbriteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary text-lg px-8 py-3"
+                  href={site.eventbriteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary text-lg px-8 py-3"
               >
-                Get Your Tickets
-              </a>
-              <Link href="/agenda" className="btn text-lg px-8 py-3">
-                View Agenda
-              </Link>
+              Get Your Tickets
+            </a>
+            <Link href="/agenda" className="btn text-lg px-8 py-3">
+              View Agenda
+            </Link>
             </div>
           </div>
         </div>

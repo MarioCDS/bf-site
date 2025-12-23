@@ -3,8 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://blue-futures.vercel.app';
   return [
-    { url: `${base}/`, priority: 1 },
-    { url: `${base}/about` },
+    { url: `${base}/about`, priority: 1 },
     { url: `${base}/speakers` },
     { url: `${base}/agenda` },
     { url: `${base}/partners` },

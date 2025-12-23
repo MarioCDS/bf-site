@@ -13,14 +13,16 @@ export const speakers: Speaker[] = [
     name: "Vitorino Mello Oliveira",
     title: "Diplomat; Assistant Professor",
     org: "Nova SBE",
-    bio: "Advisor and special guest invited to support the program."
+    bio: "Advisor and special guest invited to support the program.",
+    headshot: "https://www.novasbe.unl.pt/Portals/0/Faculty/14137.jpg"
   },
   {
     slug: "tiago-pitta-e-cunha",
     name: "Tiago Pitta e Cunha",
     title: "CEO",
     org: "Blue Ocean Foundation",
-    bio: "Invited to contribute to debates on ocean policy."
+    bio: "Invited to contribute to debates on ocean policy.",
+    headshot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe0sYKSR0XikRBMKPWE5lAOEdzo-esBfYaLA&s"
   },
   {
     slug: "emanuel-goncalves",
@@ -34,6 +36,7 @@ export const speakers: Speaker[] = [
     name: "Carlos Duarte",
     title: "Director",
     org: "Gulbenkian Blue Carbon Initiative",
-    bio: "Blue carbon and regenerative oceans."
+    bio: "Blue carbon and regenerative oceans.",
+    headshot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqRev5yPctdqjA1OYuMSFdY2ecKfcz6Y5bA&s"
   }
 ];
