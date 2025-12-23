@@ -163,29 +163,27 @@ export default function AboutPage() {
               the waves we shape today can carry a brighter, more sustainable future for all.
             </p>
           </div>
-
-          {/* SDG Icons Grid */}
-          <div className="mt-12 grid grid-cols-6 md:grid-cols-9 gap-3 max-w-4xl mx-auto">
-            {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17].map((sdg) => (
-              <div
-                key={sdg}
-                className={`aspect-square rounded-lg flex items-center justify-center text-white font-bold text-sm ${
-                  sdg === 14 ? 'ring-4 ring-brand-light scale-110' : ''
-                }`}
-                style={{
-                  backgroundColor: [
-                    '#E5243B', '#DDA63A', '#4C9F38', '#C5192D', '#FF3A21',
-                    '#26BDE2', '#FCC30B', '#A21942', '#FD6925', '#DD1367',
-                    '#FD9D24', '#BF8B2E', '#3F7E44', '#0A97D9', '#56C02B',
-                    '#00689D', '#19486A'
-                  ][sdg - 1]
-                }}
-              >
-                {sdg}
+          {/* SDG Image */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sustainable_Development_Goals.svg/2560px-Sustainable_Development_Goals.svg.png"
+                alt="United Nations Sustainable Development Goals"
+                className="w-full h-auto rounded-2xl"
+            />
+            {/* SDG 14 Focus */}
+            <div className="flex flex-col items-center mt-8">
+              <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-xl ring-4 ring-brand-light">
+                <img
+                    src="https://library.novasbe.unl.pt/wp-content/uploads/2021/08/ODS14-400x400.png"
+                    alt="SDG 14: Life Below Water"
+                    className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+              <p className="text-center text-sm text-gray-500 mt-4">
+                <strong>SDG 14: Life Below Water is at the heart of our mission</strong>
+              </p>
+            </div>
           </div>
-          <p className="text-center text-sm text-gray-500 mt-4">SDG 14: Life Below Water is at the heart of our mission</p>
         </div>
       </section>
 
