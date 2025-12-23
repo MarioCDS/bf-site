@@ -10,35 +10,35 @@ interface SectionWithBackgroundProps {
 
 const backgroundThemes: Record<string, { gradient: string; images: string[] }> = {
   ocean: {
-    gradient: "linear-gradient(135deg, rgba(0, 119, 182, 0.6) 0%, rgba(48, 192, 226, 0.6) 100%)",
+    gradient: "linear-gradient(135deg, rgba(0, 119, 182, 0.5) 0%, rgba(48, 192, 226, 0.5) 100%)",
     images: [
       "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1600&h=900&fit=crop"
     ]
   },
   sharks: {
-    gradient: "linear-gradient(135deg, rgba(16, 39, 99, 0.7) 0%, rgba(13, 110, 253, 0.7) 100%)",
+    gradient: "linear-gradient(135deg, rgba(16, 39, 99, 0.6) 0%, rgba(13, 110, 253, 0.6) 100%)",
     images: [
       "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1591381954820-ce88a34f2e51?w=1600&h=900&fit=crop"
     ]
   },
   coral: {
-    gradient: "linear-gradient(135deg, rgba(26, 137, 142, 0.7) 0%, rgba(0, 100, 120, 0.7) 100%)",
+    gradient: "linear-gradient(135deg, rgba(26, 137, 142, 0.6) 0%, rgba(0, 100, 120, 0.6) 100%)",
     images: [
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=1600&h=900&fit=crop"
     ]
   },
   underwater: {
-    gradient: "linear-gradient(135deg, rgba(13, 110, 253, 0.75) 0%, rgba(48, 192, 226, 0.75) 100%)",
+    gradient: "linear-gradient(135deg, rgba(13, 110, 253, 0.65) 0%, rgba(48, 192, 226, 0.65) 100%)",
     images: [
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600&h=900&fit=crop"
     ]
   },
   trawling: {
-    gradient: "linear-gradient(135deg, rgba(52, 73, 94, 0.8) 0%, rgba(41, 50, 65, 0.8) 100%)",
+    gradient: "linear-gradient(135deg, rgba(52, 73, 94, 0.7) 0%, rgba(41, 50, 65, 0.7) 100%)",
     images: [
       "https://images.unsplash.com/photo-1439405326854-014607f694d7?w=1600&h=900&fit=crop",
       "https://images.unsplash.com/photo-1494783367193-149034c05e41?w=1600&h=900&fit=crop"
