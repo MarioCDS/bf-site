@@ -1,45 +1,102 @@
 export type AgendaItem = {
-  day: 1 | 2;
   time: string;
+  endTime?: string;
   title: string;
+  type: "opening" | "panel" | "talk" | "fireside" | "break" | "closing" | "partner";
   description?: string;
   speakers?: string[];
+  moderator?: string;
+  partner?: string;
   location?: string;
 };
 
 export const agenda: AgendaItem[] = [
-  { day: 1, time: "08:30", title: "Check-in" },
-  { day: 1, time: "09:00", title: "Exhibition: Documentary 'Oceans'" },
-  { day: 1, time: "10:00", title: "Opening remarks" },
-  { day: 1, time: "10:10", title: "Inspiration speech", speakers: [] },
-  { day: 1, time: "10:30", title: "Talk 1 — Invited Speaker" },
-  { day: 1, time: "11:00", title: "Panel debate 1 — open to public" },
-  { day: 1, time: "12:15", title: "Partner talks 1" },
-  { day: 1, time: "12:40", title: "Lunch Break" },
-  { day: 1, time: "14:00", title: "Fireside Chat 1" },
-  { day: 1, time: "14:20", title: "Talk 2 — Inspirational" },
-  { day: 1, time: "15:00", title: "Coffee Break" },
-  { day: 1, time: "15:00", title: "Panel debate 2" },
-  { day: 1, time: "16:00", title: "Talk 3" },
-  { day: 1, time: "16:30", title: "Partner talks 2" },
-  { day: 1, time: "16:50", title: "Closing remarks – Day 1" },
-
-  { day: 2, time: "08:30", title: "Check-in" },
-  { day: 2, time: "09:00", title: "Opening remarks" },
-  { day: 2, time: "09:10", title: "Partner talks 3" },
-  { day: 2, time: "09:30", title: "Fireside Chat" },
-  { day: 2, time: "09:45", title: "Coffee Break" },
-  { day: 2, time: "10:00", title: "Talk 4" },
-  { day: 2, time: "10:30", title: "Talk 5 — Inspirational" },
-  { day: 2, time: "10:45", title: "Panel debate 3" },
-  { day: 2, time: "11:15", title: "Coffee Break" },
-  { day: 2, time: "11:30", title: "Panel debate 4" },
-  { day: 2, time: "12:20", title: "Lunch Break" },
-  { day: 2, time: "14:00", title: "Fireside Chat 2" },
-  { day: 2, time: "14:20", title: "Talk 6" },
-  { day: 2, time: "14:45", title: "Coffee Break" },
-  { day: 2, time: "15:00", title: "Talk 7" },
-  { day: 2, time: "16:00", title: "Fireside Chat 3" },
-  { day: 2, time: "16:30", title: "Talk 8" },
-  { day: 2, time: "16:50", title: "Closing remarks – Day 2" }
+  {
+    time: "14:00",
+    endTime: "14:15",
+    title: "Check-in & Welcome",
+    type: "opening",
+    description: "Registration and networking. Pick up your badge and conference materials."
+  },
+  {
+    time: "14:15",
+    endTime: "14:30",
+    title: "Opening Remarks",
+    type: "opening",
+    description: "Welcome to Blue Futures 2026. Setting the stage for a day of ocean innovation and collaboration.",
+    speakers: ["Diogo Silva", "Patricija Zizyte"]
+  },
+  {
+    time: "14:30",
+    endTime: "15:15",
+    title: "Panel: The Future of the Blue Economy",
+    type: "panel",
+    description: "Exploring how sustainable ocean practices can drive economic growth while preserving marine ecosystems. Leaders from policy, business, and academia share their vision for a regenerative ocean economy.",
+    speakers: ["TBA"],
+    moderator: "TBA"
+  },
+  {
+    time: "15:15",
+    endTime: "15:45",
+    title: "Fireside Chat: Ocean Innovation",
+    type: "fireside",
+    description: "An intimate conversation about breakthrough technologies and innovations shaping the future of ocean conservation and sustainable use.",
+    speakers: ["TBA"]
+  },
+  {
+    time: "15:45",
+    endTime: "16:00",
+    title: "Coffee Break",
+    type: "break",
+    description: "Network with fellow participants and visit the Blue Innovation Hub."
+  },
+  {
+    time: "16:00",
+    endTime: "16:45",
+    title: "Panel: Marine Conservation & Biodiversity",
+    type: "panel",
+    description: "Protecting ocean biodiversity is crucial for planetary health. This panel brings together marine scientists, conservationists, and policy experts to discuss current challenges and innovative solutions.",
+    speakers: ["TBA"],
+    moderator: "TBA"
+  },
+  {
+    time: "16:45",
+    endTime: "17:15",
+    title: "Partner Showcase",
+    type: "partner",
+    description: "Hear from our partners about their initiatives and commitment to ocean sustainability.",
+    partner: "Conference Partners"
+  },
+  {
+    time: "17:15",
+    endTime: "18:00",
+    title: "Panel: Youth Leadership in Ocean Action",
+    type: "panel",
+    description: "Young leaders are at the forefront of the ocean movement. This panel celebrates student-led initiatives and discusses how the next generation can drive meaningful change.",
+    speakers: ["TBA"],
+    moderator: "TBA"
+  },
+  {
+    time: "18:00",
+    endTime: "18:30",
+    title: "Keynote: A Vision for Blue Futures",
+    type: "talk",
+    description: "An inspiring keynote address on the possibilities and pathways toward a thriving ocean future.",
+    speakers: ["TBA"]
+  },
+  {
+    time: "18:30",
+    endTime: "18:45",
+    title: "Closing Remarks",
+    type: "closing",
+    description: "Reflections on the day and a call to action for continued ocean stewardship.",
+    speakers: ["Diogo Silva", "Patricija Zizyte"]
+  },
+  {
+    time: "18:45",
+    endTime: "20:00",
+    title: "Networking Reception",
+    type: "break",
+    description: "Connect with speakers, partners, and fellow participants at the Plant-Based Food Court. Enjoy sustainable refreshments while continuing the conversation."
+  }
 ];
