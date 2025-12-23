@@ -8,9 +8,10 @@ export const site = {
     { href: "/speakers", label: "Speakers" },
     { href: "/agenda", label: "Agenda" },
     { href: "/partners", label: "Partners" },
-    { href: "/sponsorship", label: "Sponsorship" },
+    { href: "/team", label: "Governance" },
+    { href: "/blue-innovation-hub", label: "Blue Innovation Hub" },
+    { href: "/food-court", label: "Food Court" },
     { href: "/tickets", label: "Tickets" },
-    { href: "/team", label: "Team" },
     { href: "/news", label: "News" },
     { href: "/search", label: "Search" },
     { href: "/contact", label: "Contact" }
