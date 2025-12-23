@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+import SectionWithBackground from "@/components/SectionWithBackground";
 import { agenda } from "@/lib/data/agenda";
 
 export default function AgendaPage() {
@@ -23,11 +23,11 @@ export default function AgendaPage() {
   );
 
   return (
-    <Section title="Agenda" subtitle="Two-day public program (draft)">
+    <SectionWithBackground title="Agenda" subtitle="Two-day public program (draft)" backgroundTheme="coral">
       <div className="grid md:grid-cols-2 gap-6">
         <Day items={day1} label="Day 1" />
         <Day items={day2} label="Day 2" />
       </div>
-    </Section>
+    </SectionWithBackground>
   );
 }
