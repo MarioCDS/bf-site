@@ -2,17 +2,22 @@ export const site = {
   name: "Blue Futures",
   description:
     "Blue Futures — Lisbon 2026. Fostering intergenerational dialogue on ocean stewardship and the regenerative Blue Economy.",
+  eventDate: "February 27, 2026",
+  eventbriteUrl: "https://www.eventbrite.pt/e/bilhetes-blue-futures-oikos-conference-2026-1976756381550?aff=oddtdtcreator",
+  socialMedia: {
+    instagram: "https://instagram.com/oikos_lisbon",
+    linkedin: "https://linkedin.com/company/oikos-lisbon",
+    email: "bluefutures@oikos-lisbon.org"
+  },
   nav: [
-    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/speakers", label: "Speakers" },
     { href: "/agenda", label: "Agenda" },
     { href: "/partners", label: "Partners" },
-    { href: "/sponsorship", label: "Sponsorship" },
-    { href: "/tickets", label: "Tickets" },
-    { href: "/team", label: "Team" },
+    { href: "/innovation-hub", label: "Blue Innovation Hub" },
+    { href: "/food-court", label: "Food Court" },
+    { href: "/governance", label: "Governance" },
     { href: "/news", label: "News" },
-    { href: "/search", label: "Search" },
-    { href: "/contact", label: "Contact" }
+    { href: "/search", label: "Search" }
   ]
 };
