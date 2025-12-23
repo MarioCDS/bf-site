@@ -135,7 +135,7 @@ export default function Header() {
                 <button
                   key={sectionId}
                   onClick={() => scrollToSection(sectionId)}
-                  className={`px-4 py-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${
+                  className={`px-4 py-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap flex-shrink-0 ${
                     activeSection === sectionId
                       ? "text-brand border-b-2 border-brand bg-white"
                       : "text-gray-600 hover:text-brand border-b-2 border-transparent hover:border-brand-light/50"
