@@ -9,14 +9,37 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // List of sections that are scrollable (used on about and other pages)
-  const scrollSections = [
+  // Sections for about page
+  const aboutSections = [
     "blue-futures",
     "ocean-heart",
     "students-leaders",
     "sdg-ocean",
     "call-to-action"
   ];
+
+  // Sections for home page
+  const homeSections = [
+    "highlights",
+    "why-blue-futures",
+    "join-movement",
+    "call-action"
+  ];
+
+  const getSectionLabels = (sectionIds: string[]) => {
+    const labels: Record<string, string> = {
+      "blue-futures": "Blue Futures",
+      "ocean-heart": "Ocean Heart",
+      "students-leaders": "Students Leaders",
+      "sdg-ocean": "SDG Ocean",
+      "call-to-action": "Call To Action",
+      "highlights": "Highlights",
+      "why-blue-futures": "Why Blue Futures",
+      "join-movement": "Join Movement",
+      "call-action": "Future is Now"
+    };
+    return labels;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,10 +72,18 @@ export default function Header() {
     }
   };
 
-  // Determine if we're on a scrollable page
-  const isScrollablePage = ["/about", "/governance", "/blue-innovation-hub", "/food-court"].includes(
-    pathname
-  );
+  // Determine which sections to show
+  let visibleSections: string[] = [];
+  const labels = getSectionLabels([...aboutSections, ...homeSections]);
+
+  if (pathname === "/about") {
+    visibleSections = aboutSections;
+  } else if (pathname === "/") {
+    visibleSections = homeSections;
+  }
+
+  // Check if current page has scrollable sections
+  const isScrollablePage = visibleSections.length > 0;
 
   return (
     <header
@@ -67,19 +98,16 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          {isScrollablePage && scrollSections.length > 0 ? (
+          {isScrollablePage ? (
             // Scrollable page navigation
-            scrollSections.map((sectionId) => {
-              const label = sectionId
-                .split("-")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ");
+            visibleSections.map((sectionId) => {
+              const label = labels[sectionId];
 
               return (
                 <button
                   key={sectionId}
                   onClick={() => scrollToSection(sectionId)}
-                  className={`nav-link text-sm font-medium transition-all ${
+                  className={`nav-link text-sm font-medium transition-all px-3 py-2 rounded-lg ${
                     activeSection === sectionId
                       ? "bg-brand text-white"
                       : "text-gray-700 hover:text-brand hover:bg-brand-light/20"
@@ -95,7 +123,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nav-link text-sm font-medium transition-all ${
+                className={`nav-link text-sm font-medium transition-all px-3 py-2 rounded-lg ${
                   pathname === item.href
                     ? "bg-brand text-white"
                     : "text-gray-700 hover:text-brand hover:bg-brand-light/20"
