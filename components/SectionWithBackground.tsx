@@ -93,7 +93,7 @@ export default function SectionWithBackground({
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/50"></div>
 
       {/* Content */}
       <div className="container relative z-10">
