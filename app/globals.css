@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-800;
+  @apply bg-blue-100 text-gray-800;
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
@@ -22,7 +22,7 @@ body {
 
 /* Cards */
 .card {
-  @apply rounded-2xl shadow-sm border border-gray-100 p-6 bg-white;
+  @apply rounded-2xl shadow-sm border border-gray-100 p-6 bg-blue-100;
 }
 
 /* Sections */

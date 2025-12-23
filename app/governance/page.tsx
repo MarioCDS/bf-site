@@ -92,7 +92,7 @@ export default function GovernancePage() {
       </section>
 
       {/* Tab Navigation */}
-      <section className="sticky top-16 z-30 bg-white border-b border-gray-100">
+      <section className="sticky top-16 z-30 bg-blue-100 border-b border-gray-100">
         <div className="container">
           <nav className="flex justify-center gap-2 py-4">
             {tabs.map((tab) => (
@@ -133,7 +133,7 @@ export default function GovernancePage() {
       </section>
 
       {/* About oikos */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">

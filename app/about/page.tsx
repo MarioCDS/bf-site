@@ -30,19 +30,19 @@ export default function AboutPage() {
             The numbers that remind us why we must act now
           </p>
           <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center p-6 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-6 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-4xl font-bold text-brand mb-2">71%</div>
               <div className="text-sm text-gray-600">Of Earth's surface is covered by oceans</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-6 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-4xl font-bold text-brand mb-2">50%</div>
               <div className="text-sm text-gray-600">Of Earth's oxygen comes from the ocean</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-6 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-4xl font-bold text-brand mb-2">3B+</div>
               <div className="text-sm text-gray-600">People depend on oceans for their livelihoods</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-6 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-4xl font-bold text-brand mb-2">8M</div>
               <div className="text-sm text-gray-600">Tons of plastic enter oceans each year</div>
             </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
       </section>
 
       {/* Blue Futures Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="h2 mb-8 text-center">What is Blue Futures?</h2>
@@ -110,7 +110,7 @@ export default function AboutPage() {
       </section>
 
       {/* By Students for Students */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="h2 mb-6">Join the Movement</h2>

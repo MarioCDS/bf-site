@@ -100,7 +100,7 @@ export default function NewsPage() {
           <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
             Follow our journey as we prepare for Blue Futures 2026. Subscribe to updates and be part of the conversation.
           </p>
-          <Link href="/contact" className="btn bg-white text-brand hover:bg-white/90">
+          <Link href="/contact" className="btn bg-blue-100 text-brand hover:bg-blue-100/90">
             Get In Touch
           </Link>
         </div>

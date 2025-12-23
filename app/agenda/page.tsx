@@ -63,7 +63,7 @@ export default function AgendaPage() {
               {agenda.map((item, index) => (
                 <div
                   key={index}
-                  className={`rounded-2xl border-l-4 p-6 md:p-8 ${typeColors[item.type]} bg-white shadow-sm`}
+                  className={`rounded-2xl border-l-4 p-6 md:p-8 ${typeColors[item.type]} bg-blue-100 shadow-sm`}
                 >
                   {/* Time and Type Badge */}
                   <div className="flex flex-wrap items-center gap-3 mb-4">

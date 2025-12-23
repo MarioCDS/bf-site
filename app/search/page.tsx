@@ -48,7 +48,7 @@ export default function SearchPage() {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search speakers, sessions, news..."
-                className="w-full bg-white text-gray-800 border-0 rounded-2xl pl-14 pr-6 py-4 text-lg outline-none focus:ring-4 focus:ring-white/30 shadow-lg"
+                className="w-full bg-blue-100 text-gray-800 border-0 rounded-2xl pl-14 pr-6 py-4 text-lg outline-none focus:ring-4 focus:ring-white/30 shadow-lg"
               />
             </div>
           </div>
@@ -202,13 +202,13 @@ export default function SearchPage() {
             Jump directly to the sections you're interested in
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/speakers" className="btn bg-white text-brand hover:bg-white/90">
+            <Link href="/speakers" className="btn bg-blue-100 text-brand hover:bg-blue-100/90">
               View Speakers
             </Link>
-            <Link href="/agenda" className="btn border-white text-white hover:bg-white/10">
+            <Link href="/agenda" className="btn border-white text-white hover:bg-blue-100/10">
               See Agenda
             </Link>
-            <Link href="/news" className="btn border-white text-white hover:bg-white/10">
+            <Link href="/news" className="btn border-white text-white hover:bg-blue-100/10">
               Latest News
             </Link>
           </div>

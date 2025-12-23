@@ -5,7 +5,7 @@ export const site = {
   eventDate: "February 27, 2026",
   eventbriteUrl: "https://www.eventbrite.pt/e/bilhetes-blue-futures-oikos-conference-2026-1976756381550?aff=oddtdtcreator",
   socialMedia: {
-    instagram: "https://instagram.com/oikos_lisbon",
+    instagram: "https://instagram.com/oikoslisbon",
     linkedin: "https://linkedin.com/company/oikos-lisbon",
     email: "bluefutures@oikos-lisbon.org"
   },

@@ -23,7 +23,7 @@ export default function TicketsPage() {
       </section>
 
       {/* Ticket Info */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             {/* Main Ticket Card */}
@@ -160,7 +160,7 @@ export default function TicketsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue-100">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="h2 mb-4">Ready to Join Us?</h2>

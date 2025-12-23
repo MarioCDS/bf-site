@@ -33,7 +33,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partners by Tier */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue-100">
         <div className="container">
           {tierOrder.map((tier) => {
             const tierPartners = partners.filter(p => p.tier === tier);

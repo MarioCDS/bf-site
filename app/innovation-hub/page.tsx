@@ -24,7 +24,7 @@ export default function InnovationHubPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -92,7 +92,7 @@ export default function InnovationHubPage() {
       </section>
 
       {/* Innovation Areas */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <h2 className="h2 text-center mb-4">Innovation Areas</h2>
           <p className="text-center muted max-w-2xl mx-auto mb-12">
@@ -136,14 +136,14 @@ export default function InnovationHubPage() {
             Explore synergies with partners who share your vision for the ocean's future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn bg-white text-brand hover:bg-white/90">
+            <Link href="/contact" className="btn bg-blue-100 text-brand hover:bg-blue-100/90">
               Apply to Showcase
             </Link>
             <a
               href={site.eventbriteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn border-white text-white hover:bg-white/10"
+              className="btn border-white text-white hover:bg-blue-100/10"
             >
               Get Your Tickets
             </a>

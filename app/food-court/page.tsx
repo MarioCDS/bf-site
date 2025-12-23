@@ -24,7 +24,7 @@ export default function FoodCourtPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -94,7 +94,7 @@ export default function FoodCourtPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -154,7 +154,7 @@ export default function FoodCourtPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue-100">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="h2 mb-6">Join Us at Blue Futures</h2>

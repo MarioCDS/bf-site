@@ -39,11 +39,11 @@ export default function Home() {
               href={site.eventbriteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn bg-white text-brand hover:bg-white/90 text-lg px-8 py-3"
+              className="btn bg-blue-100 text-brand hover:bg-blue-100/90 text-lg px-8 py-3"
             >
               Get Your Tickets
             </a>
-            <Link href="/about" className="btn border-white text-white hover:bg-white/10 text-lg px-8 py-3">
+            <Link href="/about" className="btn border-white text-white hover:bg-blue-100/10 text-lg px-8 py-3">
               Learn More
             </Link>
           </div>
@@ -65,17 +65,17 @@ export default function Home() {
             Shocking facts that remind us why we must act now
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-8 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-5xl font-bold text-brand mb-2">8M+</div>
               <div className="text-lg font-medium mb-2">Tons of Plastic</div>
               <div className="text-sm text-gray-600">Enter our oceans every year, threatening marine life and ecosystems</div>
             </div>
-            <div className="text-center p-8 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-8 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-5xl font-bold text-brand mb-2">50%</div>
               <div className="text-lg font-medium mb-2">Coral Reefs Lost</div>
               <div className="text-sm text-gray-600">Half of the world's coral reefs have died in the last 30 years</div>
             </div>
-            <div className="text-center p-8 rounded-2xl bg-white shadow-lg border border-gray-100">
+            <div className="text-center p-8 rounded-2xl bg-blue-100 shadow-lg border border-gray-100">
               <div className="text-5xl font-bold text-brand mb-2">90%</div>
               <div className="text-lg font-medium mb-2">Large Fish Gone</div>
               <div className="text-sm text-gray-600">Industrial fishing has depleted 90% of the world's large ocean fish</div>
@@ -106,7 +106,7 @@ export default function Home() {
               It is both a vision and an invitation: to imagine a world where our oceans thrive,
               and where our shared future is as vibrant and alive as the waters that sustain us.
             </p>
-            <Link href="/about" className="inline-block mt-8 btn border-white text-white hover:bg-white/10">
+            <Link href="/about" className="inline-block mt-8 btn border-white text-white hover:bg-blue-100/10">
               Discover Our Vision
             </Link>
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* Rethinking Our Oceans Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-100">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="h2 mb-6">Join the Movement</h2>
