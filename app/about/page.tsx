@@ -50,8 +50,10 @@ export default function AboutPage() {
       {/* Blue Futures Section */}
       <section className="py-20 bg-blue-100">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="h2 mb-8 text-center">What is Blue Futures?</h2>
+          <div className="max-w-4xl mx-auto mb-8">
+            <h2 className="h2 text-center">What is Blue Futures?</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="prose prose-lg max-w-none text-gray-600">
               <p className="text-lg leading-relaxed mb-6">
                 <strong className="text-brand">Blue Futures</strong> captures the sense of possibility held within the ocean's horizon — a
@@ -68,6 +70,13 @@ export default function AboutPage() {
                 Through dialogue, collaboration, and co-creation, we turn ideas into action, and action
                 into hope.
               </p>
+            </div>
+            <div className="relative aspect-video md:aspect-square rounded-2xl overflow-hidden">
+              <img
+                  src="https://imgur.com/kwJyCp4.png"
+                  alt="Blue Futures"
+                  className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
