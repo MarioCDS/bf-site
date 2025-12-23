@@ -9,7 +9,7 @@ type Person = {
 
 const board: Person[] = [
   { name: "Diogo Silva", role: "Coordinator" },
-  { name: "Patricija Zizyte", role: "Coordinator oI" },
+  { name: "Patricija Zizyte", role: "Coordinator" },
   { name: "Duarte Romano", role: "Program Development" },
   { name: "Estelle Freuler", role: "Partnerships and Fundraising" },
   { name: "Joana Mendes", role: "Marketing" },
