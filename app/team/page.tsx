@@ -1,41 +1,91 @@
+"use client";
 import Section from "@/components/Section";
+import { governance } from "@/lib/data/governance";
+import { useState } from "react";
 
-const teams = [
-  {
-    title: "Project Management",
-    people: ["Diogo Silva (oikos Lisbon)", "Patricija Zizyte (oikos International)"]
-  },
-  {
-    title: "Partnerships & Fundraising",
-    people: ["Duarte Romano", "Ivan Boueke", "Estelle Freuler (manager)", "Victoria Zelianiak"]
-  },
-  {
-    title: "Program Development",
-    people: ["João Seixo", "Mathieu Jaumin", "Duarte Romano"]
-  },
-  {
-    title: "Operations & Logistics",
-    people: ["Madalena Freire", "Lucas Estèban"]
-  },
-  {
-    title: "Participant Management",
-    people: ["Bruna Sampaio"]
-  }
-];
+export default function GovernancePage() {
+  const [activeTab, setActiveTab] = useState("board");
 
-export default function TeamPage() {
   return (
-    <Section title="Team & Governance" subtitle="Draft team structure">
-      <div className="grid md:grid-cols-2 gap-6">
-        {teams.map((t) => (
-          <div key={t.title} className="card">
-            <div className="font-semibold">{t.title}</div>
-            <ul className="mt-2 text-sm list-disc pl-5">
-              {t.people.map((p,i)=>(<li key={i}>{p}</li>))}
-            </ul>
+    <div>
+      <Section title="Governance" subtitle="Meet the Board, Team, and Advisors">
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 border-b border-gray-200">
+            <button
+              onClick={() => setActiveTab("board")}
+              className={`px-4 py-2 font-medium border-b-2 transition ${
+                activeTab === "board"
+                  ? "border-brand-dark text-brand-dark"
+                  : "border-transparent text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              Board
+            </button>
+            <button
+              onClick={() => setActiveTab("team")}
+              className={`px-4 py-2 font-medium border-b-2 transition ${
+                activeTab === "team"
+                  ? "border-brand-dark text-brand-dark"
+                  : "border-transparent text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              Team
+            </button>
+            <button
+              onClick={() => setActiveTab("advisors")}
+              className={`px-4 py-2 font-medium border-b-2 transition ${
+                activeTab === "advisors"
+                  ? "border-brand-dark text-brand-dark"
+                  : "border-transparent text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              Advisors
+            </button>
           </div>
-        ))}
-      </div>
-    </Section>
+        </div>
+
+        {activeTab === "board" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Board Members</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {governance.board.map((member, idx) => (
+                <div key={idx} className="card">
+                  <div className="font-semibold text-lg">{member.name}</div>
+                  <div className="text-sm text-gray-600 mt-1">{member.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === "team" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Team Members</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {governance.team.map((member, idx) => (
+                <div key={idx} className="card">
+                  <div className="font-semibold text-lg">{member.name}</div>
+                  <div className="text-sm text-gray-600 mt-1">{member.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === "advisors" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Advisors</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {governance.advisors.map((member, idx) => (
+                <div key={idx} className="card">
+                  <div className="font-semibold text-lg">{member.name}</div>
+                  <div className="text-sm text-gray-600 mt-1">{member.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </Section>
+    </div>
   );
 }
