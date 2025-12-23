@@ -10,7 +10,7 @@ export const site = {
     { href: "/partners", label: "Partners" },
     { href: "/sponsorship", label: "Sponsorship" },
     { href: "/tickets", label: "Tickets" },
-    { href: "/team", label: "Team" },
+    { href: "/governance", label: "Governance" },
     { href: "/news", label: "News" },
     { href: "/search", label: "Search" },
     { href: "/contact", label: "Contact" }

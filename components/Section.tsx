@@ -1,12 +1,12 @@
-export default function Section({ title, subtitle, children }:{
-  title: string; subtitle?: string; children: React.ReactNode;
+export default function Section({ title, subtitle, children, className = "" }:{
+  title?: string; subtitle?: string; children: React.ReactNode; className?: string;
 }) {
   return (
-    <section className="section">
+    <section className={`section ${className}`}>
       <div className="container">
-        <h2 className="h2">{title}</h2>
+        {title && <h2 className="h2">{title}</h2>}
         {subtitle && <p className="muted mt-2">{subtitle}</p>}
-        <div className="mt-6">{children}</div>
+        <div className={title || subtitle ? "mt-6" : ""}>{children}</div>
       </div>
     </section>
   );
