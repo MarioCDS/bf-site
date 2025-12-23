@@ -1,5 +1,5 @@
 "use client";
-import Section from "@/components/Section";
+import SectionWithBackground from "@/components/SectionWithBackground";
 import { governance } from "@/lib/data/governance";
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ export default function GovernancePage() {
 
   return (
     <div>
-      <Section title="Governance" subtitle="Meet the Board, Team, and Advisors">
+      <SectionWithBackground title="Governance" subtitle="Meet the Board, Team, and Advisors" backgroundTheme="sharks">
         <div className="mb-8">
           <div className="flex flex-wrap gap-2 border-b border-gray-200">
             <button
@@ -85,7 +85,7 @@ export default function GovernancePage() {
             </div>
           </div>
         )}
-      </Section>
+      </SectionWithBackground>
     </div>
   );
 }
