@@ -2,101 +2,125 @@ export type AgendaItem = {
   time: string;
   endTime?: string;
   title: string;
-  type: "opening" | "panel" | "talk" | "fireside" | "break" | "closing" | "partner";
   description?: string;
+  type: "opening" | "panel" | "talk" | "fireside" | "break" | "closing" | "partner";
   speakers?: string[];
   moderator?: string;
   partner?: string;
-  location?: string;
 };
 
 export const agenda: AgendaItem[] = [
   {
-    time: "14:00",
-    endTime: "14:15",
-    title: "Check-in & Welcome",
-    type: "opening",
-    description: "Registration and networking. Pick up your badge and conference materials."
-  },
-  {
-    time: "14:15",
+    time: "13:30",
     endTime: "14:30",
-    title: "Opening Remarks",
-    type: "opening",
-    description: "Welcome to Blue Futures 2026. Setting the stage for a day of ocean innovation and collaboration.",
-    speakers: ["Diogo Silva", "Patricija Zizyte"]
+    title: "Check-in & Documentary Screening – ‘Ocean’",
+    description:
+        "Participant check-in and screening of David Attenborough’s ‘Ocean’ documentary. This opening moment sets the tone for the afternoon, inviting participants to reflect on the urgency of marine conservation and our collective responsibility for the future of the oceans.",
+    type: "opening"
   },
   {
     time: "14:30",
-    endTime: "15:15",
-    title: "Panel: The Future of the Blue Economy",
-    type: "panel",
-    description: "Exploring how sustainable ocean practices can drive economic growth while preserving marine ecosystems. Leaders from policy, business, and academia share their vision for a regenerative ocean economy.",
-    speakers: ["TBA"],
-    moderator: "TBA"
+    endTime: "14:50",
+    title: "Opening Remarks",
+    description:
+        "Welcome and opening of the conference, setting a collective ambition for the day and highlighting the role of leadership, academia, and local communities in shaping a sustainable blue future.",
+    type: "opening",
+    speakers: [
+      "Dean of Nova School of Business and Economics (TBC)",
+      "Mayor of Cascais Municipality (TBC)"
+    ]
   },
   {
-    time: "15:15",
-    endTime: "15:45",
-    title: "Fireside Chat: Ocean Innovation",
-    type: "fireside",
-    description: "An intimate conversation about breakthrough technologies and innovations shaping the future of ocean conservation and sustainable use.",
-    speakers: ["TBA"]
-  },
-  {
-    time: "15:45",
-    endTime: "16:00",
-    title: "Coffee Break",
-    type: "break",
-    description: "Network with fellow participants and visit the Blue Innovation Hub."
-  },
-  {
-    time: "16:00",
-    endTime: "16:45",
-    title: "Panel: Marine Conservation & Biodiversity",
-    type: "panel",
-    description: "Protecting ocean biodiversity is crucial for planetary health. This panel brings together marine scientists, conservationists, and policy experts to discuss current challenges and innovative solutions.",
-    speakers: ["TBA"],
-    moderator: "TBA"
-  },
-  {
-    time: "16:45",
-    endTime: "17:15",
-    title: "Partner Showcase",
-    type: "partner",
-    description: "Hear from our partners about their initiatives and commitment to ocean sustainability.",
-    partner: "Conference Partners"
-  },
-  {
-    time: "17:15",
-    endTime: "18:00",
-    title: "Panel: Youth Leadership in Ocean Action",
-    type: "panel",
-    description: "Young leaders are at the forefront of the ocean movement. This panel celebrates student-led initiatives and discusses how the next generation can drive meaningful change.",
-    speakers: ["TBA"],
-    moderator: "TBA"
-  },
-  {
-    time: "18:00",
-    endTime: "18:30",
-    title: "Keynote: A Vision for Blue Futures",
+    time: "14:50",
+    endTime: "15:10",
+    title: "Situation Sketch",
+    description:
+        "Scientific overview of the current state of marine ecosystems and conservation.",
     type: "talk",
-    description: "An inspiring keynote address on the possibilities and pathways toward a thriving ocean future.",
-    speakers: ["TBA"]
+    speakers: ["Emanuel Gonçalves – Oceano Azul Foundation"]
+  },
+  {
+    time: "15:10",
+    endTime: "15:30",
+    title: "Fireside Chat – Marine Pollution & Solutions",
+    description:
+        "A conversation focused on marine pollution and solution-oriented approaches for a sustainable blue economy.",
+    type: "fireside",
+    speakers: ["Marta Martins – NOVA FCT & MARlab"],
+    moderator: "Susana Fonseca – ZERO"
+  },
+  {
+    time: "15:30",
+    endTime: "16:15",
+    title: "Panel Debate – Blue Carbon",
+    description:
+        "A discussion on Blue Carbon and the potential of Portugal’s maritime area for the Blue Economy.",
+    type: "panel",
+    speakers: [
+      "Assunção Cristas – Former Minister of the Sea",
+      "Maria Adelaide Ferreira – IPMA",
+      "Carlos Duarte (TBC)"
+    ]
+  },
+  {
+    time: "16:15",
+    endTime: "16:30",
+    title: "Fortuna – Nova SBE’s Tuna",
+    description:
+        "Cultural interlude showcasing Portuguese academic tradition.",
+    type: "partner",
+    partner: "Nova School of Business and Economics"
+  },
+  {
+    time: "16:30",
+    endTime: "17:00",
+    title: "Coffee Break – Blue Innovation Hub",
+    description:
+        "Networking break at the Blue Innovation Hub and Sustainable Food Court.",
+    type: "break"
+  },
+  {
+    time: "17:00",
+    endTime: "17:10",
+    title: "Inspirational Talk – The Ocean and Portugal",
+    description:
+        "Reflections on the importance of the ocean for Portugal.",
+    type: "talk",
+    speakers: ["President of the Portuguese Republic (TBC)"]
+  },
+  {
+    time: "17:10",
+    endTime: "17:30",
+    title: "Talk – Legislative Issues",
+    description:
+        "Discussion on regulatory and governance challenges shaping ocean sustainability.",
+    type: "talk",
+    speakers: ["Sérgio Carvalho – Oceano Azul Foundation"]
+  },
+  {
+    time: "17:30",
+    endTime: "18:20",
+    title: "Panel – EEKC (Environmental Economics Knowledge Center)",
+    description:
+        "Moderated debate on scaling impact in ocean sustainability and the blue economy.",
+    type: "panel",
+    speakers: ["Invited experts from EEKC (TBC)"]
+  },
+  {
+    time: "18:20",
+    endTime: "18:30",
+    title: "Closing Remarks",
+    description:
+        "Key takeaways and next steps.",
+    type: "closing",
+    speakers: ["Diogo Silva – oikos Lisbon"]
   },
   {
     time: "18:30",
-    endTime: "18:45",
-    title: "Closing Remarks",
-    type: "closing",
-    description: "Reflections on the day and a call to action for continued ocean stewardship.",
-    speakers: ["Diogo Silva", "Patricija Zizyte"]
-  },
-  {
-    time: "18:45",
     endTime: "20:00",
-    title: "Networking Reception",
-    type: "break",
-    description: "Connect with speakers, partners, and fellow participants at the Plant-Based Food Court. Enjoy sustainable refreshments while continuing the conversation."
+    title: "Cocktail Reception – Blue Innovation Hub",
+    description:
+        "Informal networking with speakers and participants.",
+    type: "break"
   }
 ];

@@ -36,7 +36,7 @@ export default function AgendaPage() {
         <div className="relative z-10 container text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Conference Agenda</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-4">
-            February 27, 2026 — Starting at 14:00
+            February 27, 2026
           </p>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
             One day of inspiring talks, panels, and networking opportunities
