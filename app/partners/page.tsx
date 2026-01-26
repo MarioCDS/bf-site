@@ -62,7 +62,7 @@ export default function PartnersPage() {
                       }`}
                     >
                       {/* Logo */}
-                      <div className={`bg-gray-50 rounded-xl flex items-center justify-center mb-4 p-4 ${
+                      <div className={`bg-blue-100 rounded-xl flex items-center justify-center mb-4 p-4 ${
                         tier === "Host" || tier === "Main Sponsor" ? "h-28" : "h-20"
                       }`}>
                         {partner.logo ? (
